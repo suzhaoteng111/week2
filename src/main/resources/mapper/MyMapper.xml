@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.szt.mapper.MyMapper">
+	<select id="list" resultType="com.szt.bean.Columns" parameterType="com.szt.bean.Columns">
+		select * from columns
+		<where>
+			<if test="id!=null and id!=''">
+				and id like #{id} 
+			</if>
+			<if test="name!=null and name!=''">
+				and name like #{name} 
+			</if>
+			<if test="ms!=null and ms!=''">
+				and ms like #{ms} 
+			</if>
+			<if test="work!=null and work!=''">
+				and work like #{work} 
+			</if>
+			<if test="cp!=null and cp!=''">
+				and cp like #{cp} 
+			</if>
+			<if test="address!=null and address!=''">
+				and address like #{address} 
+			</if>
+			<if test="money!=null and money!=''">
+				and money like #{money} 
+			</if>
+			
+		</where>
+	</select>
+</mapper>
